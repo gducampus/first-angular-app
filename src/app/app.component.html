@@ -1,1 +1,16 @@
-<app-welcome></app-welcome>
+<div>
+  <h1>Composant Parent</h1>
+  <p>Message du composant enfant : {{ childMessage }}</p>
+
+  <!-- Intégration du composant Welcome -->
+  <app-welcome></app-welcome>
+
+  <!-- Intégration du composant Child -->
+  <app-child
+    [parentMessage]="parentMessage"
+    (notifyParent)="handleNotification($event)">
+  </app-child>
+  <!-- Intégration du composant map -->
+  <h2>Affichage de la carte</h2>
+  <app-map></app-map>
+</div>
